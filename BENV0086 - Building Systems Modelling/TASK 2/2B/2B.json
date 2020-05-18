@@ -1,0 +1,116 @@
+{
+  "projectType" : "EPLUS",
+  "projectID" : "G",
+  "projectNotes" : "EP600 Task 2 B - Object: Shadow Calculation",
+  "weatherDir" : "./",
+  "weatherFile" : "EP-BESTEST.epw",
+  "idfdir" : "./",
+  "idftemplate" : "EP6002Bv2.idf",
+  "dckdir" : "./",
+  "dcktemplate" : null,
+  "outputFileNames" : "trnsysout.csv",
+  "paramFile" : null,
+  "rvifile" : null,
+  "parameters" : [ {
+    "paramType" : "PARAMETRICS",
+    "id" : "P1",
+    "name" : "BT",
+    "description" : "Building - Terrain",
+    "searchString" : "@@BT@@",
+    "type" : "INTEGER",
+    "valuesString" : "{Suburbs,Country,Ocean,City,Urban}",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P2",
+    "name" : "IGDL",
+    "description" : "Internal gains - Design Level",
+    "searchString" : "@@IGDL@@",
+    "type" : "INTEGER",
+    "valuesString" : "[100:20:300]",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P3",
+    "name" : "SGT",
+    "description" : "Site: Ground Temperature",
+    "searchString" : "@@SGT@@",
+    "type" : "INTEGER",
+    "valuesString" : "[ 6:1:14]",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P4",
+    "name" : "SGR",
+    "description" : "Site: Monthly Ground Reflectance",
+    "searchString" : "@@SGR@@",
+    "type" : "DOUBLE",
+    "valuesString" : "[0.1:0.02:0.3]",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P5",
+    "name" : "IGFR",
+    "description" : "Internal gains - Fraction Radiant",
+    "searchString" : "@@IGFR@@",
+    "type" : "DOUBLE",
+    "valuesString" : "[0.4:0.1:0.8 ]",
+    "selectedAltValue" : 0
+  } ],
+  "rvx" : {
+    "notes" : "",
+    "rvis" : [ ],
+    "csvs" : [ {
+      "sourceCsv" : "eplustbl.csv",
+      "fromReport" : "Annual Building Utility Performance Summary",
+      "fromFor" : "Entire Facility",
+      "fromTable" : "End Uses",
+      "fromColumn" : "District Heating [kWh]",
+      "fromRow" : "Heating",
+      "tableName" : "Heating",
+      "columnHeaders" : "Heating",
+      "usedInCalc" : true
+    }, {
+      "sourceCsv" : "eplustbl.csv",
+      "fromReport" : "Annual Building Utility Performance Summary",
+      "fromFor" : "Entire Facility",
+      "fromTable" : "End Uses",
+      "fromColumn" : "District Cooling [kWh]",
+      "fromRow" : "Cooling",
+      "tableName" : "Cooling",
+      "columnHeaders" : "Cooling",
+      "usedInCalc" : true
+    } ],
+    "sqls" : [ ],
+    "scripts" : [ ],
+    "userSupplied" : [ ],
+    "trns" : [ ],
+    "userVars" : [ {
+      "identifier" : "v1",
+      "caption" : "Heating [kWh]",
+      "formula" : "c0",
+      "report" : true
+    }, {
+      "identifier" : "v2",
+      "caption" : "Cooling [kWh]",
+      "formula" : "c1",
+      "report" : true
+    } ],
+    "objectives" : [ ],
+    "constraints" : [ ]
+  },
+  "execSettings" : {
+    "numThreads" : 8,
+    "workDir" : "..\\output\\",
+    "subSet" : 2,
+    "sampleOpt" : "SHUFFLE",
+    "randomSeed" : 12345,
+    "numberOfJobs" : 50,
+    "jobListFile" : "select job list file ...",
+    "rerunAll" : true,
+    "keepJEPlusFiles" : true,
+    "keepEPlusFiles" : true,
+    "deleteSelectedFiles" : false,
+    "selectedFiles" : "*.dxf *.htm *.mtd *.mdd *.rdd *.shd *.out *.audit *.eio *.idd *.bnd *.ini"
+  }
+}

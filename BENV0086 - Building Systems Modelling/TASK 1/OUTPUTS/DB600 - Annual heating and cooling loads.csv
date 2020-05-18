@@ -1,0 +1,5 @@
+1;DB600;
+;;
+Date/Time;[1] DistrictCooling:Facility (kWh);[1] DistrictHeating:Facility (kWh)
+;DistrictCooling:Facility [kWh];DistrictHeating:Facility [kWh]
+01.01.2002;7007,69541;4176,345388

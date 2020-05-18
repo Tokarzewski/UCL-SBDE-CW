@@ -1,0 +1,88 @@
+{
+  "projectType" : "EPLUS",
+  "projectID" : "G",
+  "projectNotes" : "EP600 Task 2 A - Object: Shadow Calculation",
+  "weatherDir" : "./",
+  "weatherFile" : "EP-BESTEST.epw",
+  "idfdir" : "./",
+  "idftemplate" : "EP6002A_SC.idf",
+  "dckdir" : "./",
+  "dcktemplate" : null,
+  "outputFileNames" : "trnsysout.csv",
+  "paramFile" : null,
+  "rvifile" : null,
+  "parameters" : [ {
+    "paramType" : "PARAMETRICS",
+    "id" : "P0",
+    "name" : "Parameter 0",
+    "description" : "ShadowCalculaton - Sky Diffuse Modelling Algorithm",
+    "searchString" : "@@SDMA@@",
+    "type" : "INTEGER",
+    "valuesString" : "{SimpleSkyDiffuseModeling,DetailedSkyDiffuseModeling}",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P1",
+    "name" : "Parameter 1",
+    "description" : "ShadowCalculaton - Calculation Method",
+    "searchString" : "@@CM@@",
+    "type" : "INTEGER",
+    "valuesString" : "{TimestepFrequency,AverageOverDaysInFrequency}",
+    "selectedAltValue" : 0
+  }, {
+    "paramType" : "PARAMETRICS",
+    "id" : "P2",
+    "name" : "Parameter 2",
+    "description" : "ShadowCalculaton - Calculation Frequency",
+    "searchString" : "@@CF@@",
+    "type" : "INTEGER",
+    "valuesString" : "[ 5:5:40]",
+    "selectedAltValue" : 0
+  } ],
+  "rvx" : {
+    "notes" : "",
+    "rvis" : [ ],
+    "csvs" : [ {
+      "sourceCsv" : "eplustbl.csv",
+      "fromReport" : "Annual Building Utility Performance Summary",
+      "fromFor" : "Entire Facility",
+      "fromTable" : "End Uses",
+      "fromColumn" : "District Heating [GJ]",
+      "fromRow" : "Heating",
+      "tableName" : "Heating",
+      "columnHeaders" : "Heating",
+      "usedInCalc" : true
+    }, {
+      "sourceCsv" : "eplustbl.csv",
+      "fromReport" : "Annual Building Utility Performance Summary",
+      "fromFor" : "Entire Facility",
+      "fromTable" : "End Uses",
+      "fromColumn" : "District Cooling [GJ]",
+      "fromRow" : "Cooling",
+      "tableName" : "Cooling",
+      "columnHeaders" : "Cooling",
+      "usedInCalc" : true
+    } ],
+    "sqls" : [ ],
+    "scripts" : [ ],
+    "userSupplied" : [ ],
+    "trns" : [ ],
+    "userVars" : [ ],
+    "objectives" : [ ],
+    "constraints" : [ ]
+  },
+  "execSettings" : {
+    "numThreads" : 8,
+    "workDir" : "output2A-SC/",
+    "subSet" : -1,
+    "sampleOpt" : "SHUFFLE",
+    "randomSeed" : 12345,
+    "numberOfJobs" : 1,
+    "jobListFile" : "select job list file ...",
+    "rerunAll" : true,
+    "keepJEPlusFiles" : true,
+    "keepEPlusFiles" : true,
+    "deleteSelectedFiles" : false,
+    "selectedFiles" : "*.dxf *.htm *.mtd *.mdd *.rdd *.shd *.out *.audit *.eio *.idd *.bnd *.ini"
+  }
+}
