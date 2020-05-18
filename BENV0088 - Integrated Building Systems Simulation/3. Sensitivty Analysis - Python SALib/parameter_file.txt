@@ -1,0 +1,15 @@
+#name lower_bound upper_bound
+WU 1 3
+WSHGC 1 6
+IT 1 6
+IL 0 4
+INF 1 7
+CSB 0 5
+CSPR 0 5
+CSPO 0 5
+HSB 0 5
+HSPR 0 3
+HSPO 0 3
+SD 0 3
+NoS 0 5
+HVACSys 1 17
